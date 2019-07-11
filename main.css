@@ -1,0 +1,61 @@
+#letter {
+    font-size: 300px;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bold;
+    position: fixed;
+    top:50%; left:50%; 
+    transform: translate(-50%, -60%);
+}
+
+#enter {
+    font-size: 20px;
+    text-align: center;
+}
+
+#score {
+    text-align: center;
+    font-size: 20px;
+    display:none;
+}
+
+#correct {
+    color: green;
+}
+
+#wrong {
+    color: red;
+}
+
+#level {
+    position: absolute ;
+    top: 20px;
+    left: 20px;
+    color: #666;
+    font-size:12px;
+}
+
+#elapsed {
+    position: absolute ;
+    top: 20px;
+    right: 20px;
+    color: #444;
+    font-size:16px;
+}
+
+#gameover {
+    position: fixed;
+    top:0; left:0; right:0; bottom: 0;
+    text-align:center;
+    display:none;
+}
+
+#gameover p {
+    color: #999;
+    text-align: center;
+}
+
+#msg {
+    text-align: center;
+    color: #999;
+}
