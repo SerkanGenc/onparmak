@@ -10,6 +10,7 @@ var started = false ;
 var slowdownFactor = 5 ;
 var elapsedTimer = null ;
 var elapsed = 0 ;
+var charset = "67890" ;
 
 
 function score(){
@@ -21,10 +22,9 @@ function showChars(){
     level++;
     $("#letter").css("background-color", "transparent");
     $("#letter").css("color", "#444");
-    var chars = "67890" ;
-    var rnd = Math.floor(Math.random()*chars.length);
-    current = chars.charAt(rnd);
-    currentKeyCode = chars.charCodeAt(rnd);
+    var rnd = Math.floor(Math.random()*charset.length);
+    current = charset.charAt(rnd);
+    currentKeyCode = charset.charCodeAt(rnd);
     $("#content").html(current).fadeIn(200).delay(duration-300).fadeOut(50, function(){
         if ( pressed === null){
             wrong++;
@@ -70,9 +70,22 @@ $(function(){
       if (started === false && e.keyCode === 32) {
           started = true;
           $("#msg").hide();
+          $("#inp").hide();
           $("#score").fadeIn(200);
           window.setTimeout(showChars, duration);
           elapsedTimer = window.setInterval(elapsedTime, 1000) ;
       }
   });
+  if (localStorage.getItem("charset")) {
+    charset = localStorage.getItem("charset");
+    $("#charset").val(charset);
+  }
+  $("#set").click(function() {
+    charset = $("#charset").val();
+    localStorage.setItem("charset", charset);
+  })
+  $("#reset").click(function() {
+    $("#charset").val("");
+    localStorage.removeItem("charset");
+  })
 });
