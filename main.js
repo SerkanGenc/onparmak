@@ -10,7 +10,7 @@ var started = false ;
 var slowdownFactor = 5 ;
 var elapsedTimer = null ;
 var elapsed = 0 ;
-var charset = "67890" ;
+var charset = "678901" ;
 
 
 function score(){
