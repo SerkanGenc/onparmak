@@ -3,7 +3,7 @@ var currentKeyCode ;
 var pressed = null ;
 var correct = 0 ;
 var wrong = 0 ;
-var duration = 2000 ;
+var duration = 1900 ;
 var level = 0;
 var gameOverLimit = 10 ;
 var started = false ;
