@@ -11,6 +11,7 @@ var slowdownFactor = 5 ;
 var elapsedTimer = null ;
 var elapsed = 0 ;
 var charset = "678901" ;
+var lowerLimit = 800 ;
 
 
 function score(){
@@ -33,7 +34,7 @@ function showChars(){
     });
     pressed = null ;
     duration -= slowdownFactor ;
-    if (duration < 1000) duration = 1000;
+    if (duration < lowerLimit) duration = lowerLimit;
     //console.log(duration);
     $("#level").html(duration + " ms");
     if (wrong !== gameOverLimit)   window.setTimeout(showChars, duration);
